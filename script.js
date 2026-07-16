@@ -1,7 +1,7 @@
 // ===== DWY — Done-With-You Growth =====
 
 // Change this to your agency's contact email:
-const CONTACT_EMAIL = "hello@dwy-growth.com";
+const CONTACT_EMAIL = "borismalinovv@gmail.com";
 
 // --- Mobile navigation toggle ---
 const navToggle = document.getElementById("navToggle");
