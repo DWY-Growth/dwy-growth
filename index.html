@@ -13,7 +13,13 @@
 </head>
 <body>
 
-  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <div class="bg-glow" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
 
   <!-- ===== Header ===== -->
   <header class="site-header" id="siteHeader">
@@ -42,7 +48,7 @@
       <div class="container hero-inner">
         <div class="hero-copy reveal">
           <p class="pill"><span class="pill-dot"></span>SEO + GEO · Search engines and AI assistants</p>
-          <h1>Growth, done <span class="gradient-text">with you</span>.<br>Never just for you.</h1>
+          <h1>Growth, done <span class="gradient-text shimmer">with you</span>.<br>Never just for you.</h1>
           <p class="lead">
             You're part of the team — your ideas and knowledge of your business,
             combined with our technical SEO expertise and AI-search know-how.
@@ -61,74 +67,87 @@
           </div>
         </div>
         <div class="hero-visual reveal delay-1">
-          <div class="glass-card chart-card">
-            <div class="card-topbar">
-              <span class="chart-label">Your visibility, together</span>
-              <span class="badge-live"><span class="live-dot"></span>Growing</span>
+          <div class="visual-stack">
+            <div class="glass-card chart-card" data-tilt>
+              <div class="card-topbar">
+                <span class="chart-label">Your visibility, together</span>
+                <span class="badge-live"><span class="live-dot"></span>Growing</span>
+              </div>
+              <svg viewBox="0 0 320 180" aria-hidden="true" class="growth-chart">
+                <defs>
+                  <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#4F6EF7"/>
+                    <stop offset="100%" stop-color="#A855F7"/>
+                  </linearGradient>
+                  <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#A855F7" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="#4F6EF7" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path class="chart-fill" d="M10,160 L60,120 L110,140 L170,80 L230,100 L310,20 L310,180 L10,180 Z" fill="url(#fillGrad)"/>
+                <path class="chart-line" d="M10,160 L60,120 L110,140 L170,80 L230,100 L310,20" fill="none" stroke="url(#lineGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="310" cy="20" r="7" fill="#A855F7"/>
+                <circle cx="310" cy="20" r="12" fill="#A855F7" opacity="0.25" class="pulse-ring"/>
+              </svg>
+              <div class="chart-tags">
+                <span class="tag">Google Rankings</span>
+                <span class="tag tag-alt">AI Visibility</span>
+              </div>
             </div>
-            <svg viewBox="0 0 320 180" aria-hidden="true" class="growth-chart">
-              <defs>
-                <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#4F6EF7"/>
-                  <stop offset="100%" stop-color="#A855F7"/>
-                </linearGradient>
-                <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#A855F7" stop-opacity="0.3"/>
-                  <stop offset="100%" stop-color="#4F6EF7" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <path class="chart-fill" d="M10,160 L60,120 L110,140 L170,80 L230,100 L310,20 L310,180 L10,180 Z" fill="url(#fillGrad)"/>
-              <path class="chart-line" d="M10,160 L60,120 L110,140 L170,80 L230,100 L310,20" fill="none" stroke="url(#lineGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="310" cy="20" r="7" fill="#A855F7"/>
-              <circle cx="310" cy="20" r="12" fill="#A855F7" opacity="0.25" class="pulse-ring"/>
-            </svg>
-            <div class="chart-tags">
-              <span class="tag">Google Rankings</span>
-              <span class="tag tag-alt">AI Visibility</span>
+            <div class="float-chip chip-1">
+              <span class="chip-icon up">↑</span>
+              <span><strong>+184%</strong> organic traffic</span>
+            </div>
+            <div class="float-chip chip-2">
+              <span class="chip-icon spark">✦</span>
+              <span>Cited by <strong>ChatGPT</strong></span>
+            </div>
+            <div class="float-chip chip-3">
+              <span class="chip-icon key">#1</span>
+              <span>for <strong>32 keywords</strong></span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== Stats strip ===== -->
-    <section class="stats">
-      <div class="container stats-inner reveal">
-        <div class="stat">
-          <span class="stat-number gradient-text">100%</span>
-          <span class="stat-label">Transparency — you see everything we do</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number gradient-text">2-in-1</span>
-          <span class="stat-label">SEO for search engines + GEO for AI assistants</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number gradient-text">1 Team</span>
-          <span class="stat-label">Your people and ours, working as one</span>
-        </div>
+    <!-- ===== Marquee ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>SEO</span><span class="mq-dot">✦</span>
+        <span>GEO</span><span class="mq-dot">✦</span>
+        <span>AI Visibility</span><span class="mq-dot">✦</span>
+        <span>Technical Audits</span><span class="mq-dot">✦</span>
+        <span>Content Strategy</span><span class="mq-dot">✦</span>
+        <span>Done-With-You</span><span class="mq-dot">✦</span>
+        <span>SEO</span><span class="mq-dot">✦</span>
+        <span>GEO</span><span class="mq-dot">✦</span>
+        <span>AI Visibility</span><span class="mq-dot">✦</span>
+        <span>Technical Audits</span><span class="mq-dot">✦</span>
+        <span>Content Strategy</span><span class="mq-dot">✦</span>
+        <span>Done-With-You</span><span class="mq-dot">✦</span>
       </div>
-    </section>
+    </div>
 
-    <!-- ===== Why DWY ===== -->
-    <section class="section" id="why">
+    <!-- ===== Why DWY (bento) ===== -->
+    <section class="section section-alt tint-blue" id="why">
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">Why "Done-With-You"?</p>
           <h2>The name is the promise.</h2>
-          <p class="section-sub">
-            Most agencies work <em>for</em> you — you hand over the keys and hope for the best.
-            We work <em>with</em> you. Nobody knows your business, your customers and your market
-            like you do. We bring the professional and technical skills; you bring the insight.
-            Mixed together, that's where real growth happens.
-          </p>
         </div>
-        <div class="cards-grid three reveal">
-          <div class="glass-card card">
+        <div class="bento reveal stagger">
+          <div class="glass-card card bento-wide">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <h3>You're part of the process</h3>
-            <p>Your ideas and impact are highly valued and built into the strategy — not filed away in a suggestion box.</p>
+            <h3>Most agencies work <em>for</em> you. We work <em>with</em> you.</h3>
+            <p>
+              Nobody knows your business, your customers and your market like you do.
+              We bring the professional and technical skills; you bring the insight.
+              Mixed together — that's where real growth happens. Your ideas and impact
+              are highly valued and built into the strategy, not filed away in a suggestion box.
+            </p>
           </div>
           <div class="glass-card card">
             <div class="card-icon">
@@ -144,6 +163,10 @@
             <h3>You have a say</h3>
             <p>Every meaningful decision is made together. We recommend, we explain, and you're always at the table.</p>
           </div>
+          <div class="glass-card card bento-stat">
+            <span class="bento-number gradient-text">1</span>
+            <p><strong>One team.</strong> Your people and ours, working as one — one shared roadmap, one goal.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -155,41 +178,41 @@
           <p class="eyebrow">What We Do</p>
           <h2>Visibility where it matters — today <span class="gradient-text">and tomorrow</span>.</h2>
         </div>
-        <div class="cards-grid four reveal">
-          <div class="glass-card card">
+        <div class="cards-grid two reveal stagger">
+          <div class="glass-card card card-big">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
             </div>
             <h3>Technical SEO</h3>
-            <p>Site architecture, speed, crawlability and indexing — the engineering foundation search engines reward.</p>
+            <p>Site architecture, speed, crawlability and indexing — the engineering foundation search engines reward. We find and fix what's holding your site back, and explain it in plain language.</p>
           </div>
-          <div class="glass-card card">
+          <div class="glass-card card card-big">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             </div>
             <h3>Content &amp; On-Page</h3>
-            <p>Content strategy shaped by your expertise and our keyword and intent research — written to rank and convert.</p>
+            <p>Content strategy shaped by your expertise and our keyword and intent research — written to rank, convert, and sound like your brand, not like a content mill.</p>
           </div>
-          <div class="glass-card card card-featured">
+          <div class="glass-card card card-big card-featured">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 5.4L20 9l-5.6 1.6L12 16l-2.4-5.4L4 9l5.6-1.6L12 2z"/><path d="M19 15l1 2.5L22.5 18 20 19l-1 2.5L18 19l-2.5-1 2.5-.5L19 15z"/></svg>
             </div>
             <h3>GEO — AI Search</h3>
-            <p>Positioning your brand inside AI models and chat assistants like ChatGPT, Gemini and Perplexity, so you're the answer they give.</p>
+            <p>Positioning your brand inside AI models and chat assistants like ChatGPT, Gemini and Perplexity, so you're the answer they give. We invest heavily here — because it's where search is going.</p>
           </div>
-          <div class="glass-card card">
+          <div class="glass-card card card-big">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             </div>
             <h3>Analytics &amp; Reporting</h3>
-            <p>Clear, honest reporting you actually understand — reviewed together so numbers turn into decisions.</p>
+            <p>Clear, honest reporting you actually understand — reviewed together in regular sessions so numbers turn into decisions, not decoration.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ===== GEO ===== -->
-    <section class="section" id="geo">
+    <section class="section section-alt tint-purple" id="geo">
       <div class="container geo-inner">
         <div class="geo-copy reveal">
           <p class="eyebrow">Beyond SEO</p>
@@ -207,14 +230,23 @@
           <a href="#contact" class="btn btn-primary">Future-Proof Your Visibility</a>
         </div>
         <div class="geo-visual reveal delay-1">
-          <div class="glass-card chat-card">
-            <div class="chat-bubble user">Which agency should I trust to grow my business online?</div>
-            <div class="chat-bubble ai">
-              <span class="ai-dot"></span>
-              Based on results and approach, <strong>your brand</strong> stands out — here's why…
+          <div class="geo-stack">
+            <span class="orbit-ring"></span>
+            <div class="glass-card chat-card" id="chatDemo" data-tilt>
+              <div class="chat-bubble user msg">Which agency should I trust to grow my business online?</div>
+              <div class="chat-bubble ai msg">
+                <span class="dots"><span></span><span></span><span></span></span>
+                <span class="text"><span class="ai-dot"></span>Based on results and approach, <strong>your brand</strong> stands out — here's why…</span>
+              </div>
+              <div class="chat-bubble user msg">Tell me more about them.</div>
+              <div class="chat-bubble ai msg">
+                <span class="dots"><span></span><span></span><span></span></span>
+                <span class="text"><span class="ai-dot"></span>They keep clients in the loop at every step — a true <strong>done-with-you</strong> partner.</span>
+              </div>
             </div>
-            <div class="chat-bubble user">Tell me more about them.</div>
-            <div class="chat-bubble ai typing"><span></span><span></span><span></span></div>
+            <div class="float-chip chip-geo-1"><span class="chip-icon spark">✦</span><span>ChatGPT</span></div>
+            <div class="float-chip chip-geo-2"><span class="chip-icon spark">✦</span><span>Gemini</span></div>
+            <div class="float-chip chip-geo-3"><span class="chip-icon spark">✦</span><span>Perplexity</span></div>
           </div>
         </div>
       </div>
@@ -227,7 +259,7 @@
           <p class="eyebrow">How We Work</p>
           <h2>Every step, side by side.</h2>
         </div>
-        <ol class="process reveal">
+        <ol class="process reveal stagger">
           <li class="glass-card process-step">
             <span class="step-num">01</span>
             <h3>Discover — together</h3>
@@ -252,11 +284,13 @@
       </div>
     </section>
 
+    <div class="divider" aria-hidden="true"><span class="divider-mark">✦</span></div>
+
     <!-- ===== CTA / Contact ===== -->
     <section class="section" id="contact">
       <div class="container">
         <div class="cta-panel reveal">
-          <h2>Let's grow your business — <span class="gradient-text">together</span>.</h2>
+          <h2>Let's grow your business — <span class="gradient-text shimmer">together</span>.</h2>
           <p class="cta-sub">
             Tell us where you are and where you want to be. We'll reply with honest first
             thoughts — no pressure, no jargon.
