@@ -5,6 +5,17 @@ const CONTACT_EMAIL = "hello@dwy-growth.com";
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// --- Light / dark theme toggle ---
+// (initial theme is set by the inline script in <head> to avoid a flash)
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+  const current = document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  const next = current === "light" ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem("dwy-theme", next);
+});
+
 // --- Mobile navigation toggle ---
 const navToggle = document.getElementById("navToggle");
 const siteNav = document.getElementById("siteNav");
