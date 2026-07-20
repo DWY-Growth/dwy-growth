@@ -183,18 +183,40 @@ h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.6rem; }
 
 /* ===== Brand wordmark ===== */
 .brand {
+  position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   text-decoration: none;
   line-height: 1;
+  padding: 0.2rem 0.4rem;
+  transition: transform 0.25s ease;
 }
+
+.brand:hover { transform: scale(1.04); }
+
+/* Soft gradient halo behind the wordmark for extra presence */
+.brand::before {
+  content: "";
+  position: absolute;
+  inset: -30% -45%;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, rgba(79, 110, 247, 0.22), rgba(168, 85, 247, 0.14) 55%, transparent 75%);
+  filter: blur(18px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.brand:hover::before { opacity: 1; }
 
 .brand-mark {
   font-family: var(--font-head);
   font-weight: 800;
-  font-size: 1.7rem;
-  letter-spacing: 0.01em;
+  font-size: clamp(2.1rem, 3.2vw, 2.6rem);
+  letter-spacing: -0.01em;
   color: var(--ink);
+  text-shadow: 0 2px 24px rgba(79, 110, 247, 0.25);
 }
 
 .brand-w {
@@ -205,12 +227,13 @@ h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.6rem; }
 }
 
 .brand-sub {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  margin-top: 0.3rem;
+  margin-top: 0.15rem;
+  text-align: center;
 }
 
 /* ===== Buttons ===== */

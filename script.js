@@ -1,4 +1,4 @@
-// ===== DWY — Done-With-You Growth =====
+// ===== DWY - Growth =====
 
 // Change this to your agency's contact email:
 const CONTACT_EMAIL = "hello@dwy-growth.com";
